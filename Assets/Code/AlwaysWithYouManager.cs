@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MusicManager : MonoBehaviour
+public class AlwaysWithYouManager : MonoBehaviour
 {
     private void Start()
     {
