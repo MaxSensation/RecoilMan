@@ -743,7 +743,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 200
-  movementSmoothing: 0.24
+  movementSpeed: 8
+  movementSmoothing: 0.1
   airControl: 0
 --- !u!114 &6089116465241135614
 MonoBehaviour:

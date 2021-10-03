@@ -4,7 +4,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 	[SerializeField] private float jumpForce = 400f;
-	[Range(0, .3f)] [SerializeField] private float movementSmoothing = .05f;
+	[SerializeField] private float movementSpeed = 10f;
+	[Range(0, 1f)] [SerializeField] private float movementSmoothing = .05f;
 	[SerializeField] private bool airControl;
 
 	private GroundedHandler _groundedHandler;
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 	private bool _jumpQued;
 	private HealthHandler _healthHandler;
 	private bool _isDead;
+
 	private void Awake()
 	{
 		_healthHandler = GetComponent<HealthHandler>();
@@ -53,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 		if (_groundedHandler.IsGrounded() || airControl)
 		{
-			Vector3 targetVelocity = new Vector2(move * 10f, _body.velocity.y);
+			Vector3 targetVelocity = new Vector2(move * movementSpeed, _body.velocity.y);
 			_body.velocity = Vector3.SmoothDamp(_body.velocity, targetVelocity, ref _velocity, movementSmoothing);
 			if (move > 0 && !_facingRight)
 				Flip();
