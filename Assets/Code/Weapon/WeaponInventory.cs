@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Code;
 using CoreSystem.IdentitySystem;
@@ -7,6 +8,7 @@ namespace Weapon
 {
     public class WeaponInventory : MonoBehaviour, IProperty
     {
+        public Action OnWeaponDischargedEvent;
         private List<WeaponHandler> _weapons;
         private WeaponHandler _currentWeapon;
         private Owner _owner;
@@ -19,6 +21,7 @@ namespace Weapon
                 weapon.SetOwner(_owner);
                 weapon.SetupWeapon();
                 weapon.gameObject.SetActive(false);
+                weapon.OnFireEvent += OnWeaponDischargedEvent;
             }
             WeaponPickup.OnPickedUpWeapon += PickupWeapon;
         }
