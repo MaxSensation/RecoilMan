@@ -1360,6 +1360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1842267504}
   - component: {fileID: 1842267505}
+  - component: {fileID: 1842267506}
   m_Layer: 0
   m_Name: AlwaysWithU
   m_TagString: Untagged
@@ -1392,5 +1393,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ce9cb3686299634d9d9b82ca9da19f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1842267506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842267503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a05899f38e2d04da463f7ad818d931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
