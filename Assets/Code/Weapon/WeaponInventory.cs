@@ -21,7 +21,7 @@ namespace Weapon
                 weapon.SetOwner(_owner);
                 weapon.SetupWeapon();
                 weapon.gameObject.SetActive(false);
-                weapon.OnFireEvent += OnWeaponDischargedEvent;
+                weapon.OnFireEvent += () => OnWeaponDischargedEvent?.Invoke();
             }
             WeaponPickup.OnPickedUpWeapon += PickupWeapon;
         }
