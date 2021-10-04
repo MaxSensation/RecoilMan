@@ -6,14 +6,13 @@ namespace Code
     {
         [SerializeField] private LayerMask whatIsGround;
         [SerializeField] private Transform groundCheck;
-
-        private const float GroundedRadius = .2f;
+        [SerializeField] private float groundedRadius = .2f;
         private bool _grounded;
 
         private void FixedUpdate()
         {
             _grounded = false;
-            var colliders = Physics2D.OverlapCircleAll(groundCheck.position, GroundedRadius, whatIsGround);
+            var colliders = Physics2D.OverlapCircleAll(groundCheck.position, groundedRadius, whatIsGround);
             foreach (var collider in colliders)
             {
                 if (collider.gameObject == gameObject) continue;

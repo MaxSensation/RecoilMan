@@ -246,6 +246,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3d8f0fe3ac06c441aa2e6ae736bf241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &4708803745426586093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8993615732462220111}
+  m_Layer: 0
+  m_Name: FrontCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8993615732462220111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4708803745426586093}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.02, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6089116465241135601}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1319458590277610076
 AudioSource:
   m_ObjectHideFlags: 0
@@ -354,6 +384,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3d8f0fe3ac06c441aa2e6ae736bf241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &5471699325208848934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9191748355440243064}
+  m_Layer: 0
+  m_Name: BackCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9191748355440243064
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5471699325208848934}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.01, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6089116465241135601}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6089116463901553022
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,6 +707,8 @@ Transform:
   - {fileID: 6089116463907798863}
   - {fileID: 8047047771823950468}
   - {fileID: 2671925560851303797}
+  - {fileID: 8993615732462220111}
+  - {fileID: 9191748355440243064}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -687,6 +749,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   groundCheck: {fileID: 6089116463907798863}
+  groundedRadius: 0.1
 --- !u!114 &6089116465241135612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,7 +778,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8f1e2288819c8a4bb7cda8e2df9f7ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 0.01
+  rotationSpeed: 0.1
+  frontChecker: {fileID: 8993615732462220111}
+  backChecker: {fileID: 9191748355440243064}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
+  groundedRadius: 0.01
 --- !u!114 &8594150799963944522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5976,13 +6045,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87a61ed0d60a01147bbe610db1084c81, type: 3}
---- !u!4 &3967128511477248540 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7551736383912212601, guid: 87a61ed0d60a01147bbe610db1084c81, type: 3}
-  m_PrefabInstance: {fileID: 6900423264637946469}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3967128511477248543 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7551736383912212602, guid: 87a61ed0d60a01147bbe610db1084c81, type: 3}
+  m_PrefabInstance: {fileID: 6900423264637946469}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3967128511477248540 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7551736383912212601, guid: 87a61ed0d60a01147bbe610db1084c81, type: 3}
   m_PrefabInstance: {fileID: 6900423264637946469}
   m_PrefabAsset: {fileID: 0}
