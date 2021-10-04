@@ -4,6 +4,7 @@ public class MenuButton : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject optionsMenu;
+    [SerializeField] private GameObject CreditsMenu;
     private RecoilManInput _recoilManInput;
     private bool _isMenuOpen;
     private bool _gameHasStarted;
@@ -29,6 +30,7 @@ public class MenuButton : MonoBehaviour
     {
         if (mainMenu) mainMenu.SetActive(true);
         if (optionsMenu) optionsMenu.SetActive(false);
+        if (CreditsMenu) CreditsMenu.SetActive(false);
         Time.timeScale = 0f;
         _isMenuOpen = true;
     }
@@ -37,6 +39,7 @@ public class MenuButton : MonoBehaviour
     {
         if (mainMenu) mainMenu.SetActive(false);
         if (optionsMenu) optionsMenu.SetActive(false);
+        if (CreditsMenu) CreditsMenu.SetActive(false);
         Time.timeScale = 1f;
         _isMenuOpen = false;
         _gameHasStarted = true;

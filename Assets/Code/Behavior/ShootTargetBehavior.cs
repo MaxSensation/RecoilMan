@@ -10,6 +10,8 @@ namespace Behavior
     {
         [SerializeField] private Vector3 offset;
         [SerializeField] private GameObjectDataType target;
+        [SerializeField] private float range;
+        
         private WeaponHandler _weaponHandler;
         
         public override void EnterBehavior(SMController controller)
@@ -21,7 +23,12 @@ namespace Behavior
         public override void UpdateBehavior()
         {
             base.UpdateBehavior();
-            if (_weaponHandler && IsPlayerInSight()) Fire();
+            if (_weaponHandler && IsPlayerInSight() && IsInRange()) Fire();
+        }
+
+        private bool IsInRange()
+        {
+            return Vector2.Distance(Controller.transform.position, target.Data.transform.position) <= range;
         }
 
         private bool IsPlayerInSight()
