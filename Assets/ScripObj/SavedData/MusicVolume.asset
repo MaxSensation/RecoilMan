@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7f6555924fb4289b8a53c9d6277f519, type: 3}
   m_Name: MusicVolume
   m_EditorClassIdentifier: 
+  defaultValue: 1

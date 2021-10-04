@@ -19,7 +19,7 @@ public class VolumeChanger : MonoBehaviour
             ChangeVolume(Mathf.Log10(_slider.value) * 20);
             savedVolume.Data = _slider.value;
         });
-        if (savedVolume) _slider.value = savedVolume.Data;
+        if (savedVolume.Data < 1f) _slider.value = savedVolume.Data;
     }
 
     private void ChangeVolume(float vol)
