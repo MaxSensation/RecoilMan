@@ -1,5 +1,6 @@
 using System;
 using HealthSystem;
+using UI;
 using UnityEngine;
 
 public class PlayerDiedHandler : MonoBehaviour
@@ -29,6 +30,7 @@ public class PlayerDiedHandler : MonoBehaviour
 
     private void Died()
     {
+        DeathSystemUI.ONDeathAddedEvent?.Invoke();
         timeOfDeath = Time.time;
         died = true;
     }
