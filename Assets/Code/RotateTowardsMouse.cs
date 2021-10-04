@@ -30,7 +30,7 @@ public class RotateTowardsMouse : MonoBehaviour
 
     private void Update()
     {
-        if (!isDead) Rotate();
+        if (!isDead && Time.timeScale != 0f) Rotate();
     }
 
     private void Rotate() => transform.rotation = GetRotationTowardsPosition(Camera.main.ScreenToWorldPoint(_aimPosition), transform.position);

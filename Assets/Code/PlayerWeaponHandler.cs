@@ -51,7 +51,7 @@ namespace Player
         private void Fire()
         {
             _holdingFire = true;
-            if (!_isDead) _weaponInventory.Fire();
+            if (!_isDead && Time.timeScale != 0f) _weaponInventory.Fire();
         }
     }
 }

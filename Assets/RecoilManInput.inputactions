@@ -62,7 +62,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Exit",
+                    "name": "Menu",
                     "type": "Button",
                     "id": "51eb2a20-de6e-4c15-847f-0283f196e4ef",
                     "expectedControlType": "Button",
@@ -320,7 +320,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Exit",
+                    "action": "Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

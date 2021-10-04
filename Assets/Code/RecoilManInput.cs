@@ -75,7 +75,7 @@ public class @RecoilManInput : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Exit"",
+                    ""name"": ""Menu"",
                     ""type"": ""Button"",
                     ""id"": ""51eb2a20-de6e-4c15-847f-0283f196e4ef"",
                     ""expectedControlType"": ""Button"",
@@ -333,7 +333,7 @@ public class @RecoilManInput : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Exit"",
+                    ""action"": ""Menu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -918,7 +918,7 @@ public class @RecoilManInput : IInputActionCollection, IDisposable
         m_Player_WeaponSlot1 = m_Player.FindAction("WeaponSlot1", throwIfNotFound: true);
         m_Player_WeaponSlot2 = m_Player.FindAction("WeaponSlot2", throwIfNotFound: true);
         m_Player_WeaponSlot3 = m_Player.FindAction("WeaponSlot3", throwIfNotFound: true);
-        m_Player_Exit = m_Player.FindAction("Exit", throwIfNotFound: true);
+        m_Player_Menu = m_Player.FindAction("Menu", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -987,7 +987,7 @@ public class @RecoilManInput : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_WeaponSlot1;
     private readonly InputAction m_Player_WeaponSlot2;
     private readonly InputAction m_Player_WeaponSlot3;
-    private readonly InputAction m_Player_Exit;
+    private readonly InputAction m_Player_Menu;
     public struct PlayerActions
     {
         private @RecoilManInput m_Wrapper;
@@ -999,7 +999,7 @@ public class @RecoilManInput : IInputActionCollection, IDisposable
         public InputAction @WeaponSlot1 => m_Wrapper.m_Player_WeaponSlot1;
         public InputAction @WeaponSlot2 => m_Wrapper.m_Player_WeaponSlot2;
         public InputAction @WeaponSlot3 => m_Wrapper.m_Player_WeaponSlot3;
-        public InputAction @Exit => m_Wrapper.m_Player_Exit;
+        public InputAction @Menu => m_Wrapper.m_Player_Menu;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1030,9 +1030,9 @@ public class @RecoilManInput : IInputActionCollection, IDisposable
                 @WeaponSlot3.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeaponSlot3;
                 @WeaponSlot3.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeaponSlot3;
                 @WeaponSlot3.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWeaponSlot3;
-                @Exit.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnExit;
-                @Exit.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnExit;
-                @Exit.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnExit;
+                @Menu.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenu;
+                @Menu.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenu;
+                @Menu.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenu;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1058,9 +1058,9 @@ public class @RecoilManInput : IInputActionCollection, IDisposable
                 @WeaponSlot3.started += instance.OnWeaponSlot3;
                 @WeaponSlot3.performed += instance.OnWeaponSlot3;
                 @WeaponSlot3.canceled += instance.OnWeaponSlot3;
-                @Exit.started += instance.OnExit;
-                @Exit.performed += instance.OnExit;
-                @Exit.canceled += instance.OnExit;
+                @Menu.started += instance.OnMenu;
+                @Menu.performed += instance.OnMenu;
+                @Menu.canceled += instance.OnMenu;
             }
         }
     }
@@ -1224,7 +1224,7 @@ public class @RecoilManInput : IInputActionCollection, IDisposable
         void OnWeaponSlot1(InputAction.CallbackContext context);
         void OnWeaponSlot2(InputAction.CallbackContext context);
         void OnWeaponSlot3(InputAction.CallbackContext context);
-        void OnExit(InputAction.CallbackContext context);
+        void OnMenu(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

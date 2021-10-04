@@ -7,12 +7,7 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("Level1");
     }
-    
-    public void PressedOption()
-    {
-        
-    }
-    
+
     public void PressedExit()
     {
         Application.Quit();
