@@ -18,7 +18,6 @@ namespace Weapon
 
         private void Start()
         {
-            weaponBase = Instantiate(weaponBase);
             weaponBase.OnFiredEvent += OnFire;
         }
 
