@@ -8,7 +8,7 @@ namespace UI
     {
         public static Action<int> ONScoreAddedEvent;
         [SerializeField] private TMP_Text scoreText;
-        private int _currentScore;
+        private static int _currentScore;
         
         private void Start()
         {
@@ -24,6 +24,16 @@ namespace UI
         private void UpdateUIText()
         {
             scoreText.SetText(_currentScore.ToString());
+        }
+        
+        public static int GetTotalCoins()
+        {
+            return _currentScore;
+        }
+
+        public static void ResetCoins()
+        {
+            _currentScore = 0;
         }
     }
 }

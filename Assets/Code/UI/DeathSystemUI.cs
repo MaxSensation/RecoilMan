@@ -8,7 +8,7 @@ namespace UI
     {
         public static Action ONDeathAddedEvent;
         [SerializeField] private TMP_Text scoreText;
-        private int _currentDeaths;
+        private static int _currentDeaths;
         
         private void Start()
         {
@@ -24,6 +24,16 @@ namespace UI
         private void UpdateUIText()
         {
             scoreText.SetText(_currentDeaths.ToString());
+        }
+
+        public static int GetTotalDeaths()
+        {
+            return _currentDeaths;
+        }
+
+        public static void ResetDeaths()
+        {
+            _currentDeaths = 0;
         }
     }
 }
